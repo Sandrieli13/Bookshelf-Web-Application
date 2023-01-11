@@ -1,5 +1,6 @@
 /*Declared all the main DOM elements that I will use for rendering first*/
 //When re-rendered added comments appear below books.
+// Left some older features in. Felt bad about getting rid of them.
 const main = document.querySelector("main");
 const div = document.createElement("div");
 main.append(div);
@@ -13,10 +14,10 @@ const ol2 = document.createElement("ol");
 //will have a comment and favorite function called with its respective array.
 class Book {
   constructor(author, language, subject, title) {
-    (this.author = author.toString().replace(",", ""));
-    (this.language = language);
-    (this.subject = subject.toString()); 
-    (this.title = title);
+    this.author = author.toString().replace(",", "");
+    this.language = language;
+    this.subject = subject.toString();
+    this.title = title;
     this.comment = [];
   }
   addcomment(string) {
@@ -85,9 +86,9 @@ class Bookshelf {
       ol2.append(li);
     });
   }
-//by the time I am writing this comment I do not remember why I need render3 which basically
-//is the same function as render, but at some point I found it necessary in order to re-render
-//the bookshelf. I do not want to fix it if it isn't broken.
+  //by the time I am writing this comment I do not remember why I need render3 which basically
+  //is the same method as render, but at some point I found it necessary in order to re-render
+  //the bookshelf. I do not want to fix it if it isn't broken.
   render3() {
     let i = 0;
     let j = 0;
@@ -234,7 +235,7 @@ s.addEventListener("click", function () {
   favorite(searcharr);
   comment(searcharr);
 });
-//function which I use for search filter
+//isRelevant() is the function that I use for the search filter
 function isRelevant(a, v) {
   let words1 = a.split(" ");
   let words = v.split(" ");
@@ -252,7 +253,7 @@ function isRelevant(a, v) {
 }
 
 //Sorting
-//different sorting methods are triggered by different options selected,. 
+//different sorting methods are triggered by different options selected,.
 function sortt() {
   const q = document.getElementById("selector");
   q.addEventListener("change", function (event) {
@@ -355,17 +356,16 @@ function sortt() {
 }
 sortt();
 
-
 //Let's try Registration?
 //Have not tested it much but it seems to work. One shorfall is that when redirected to a
 //different page via navigator it will ask you to sign in again without remembering your
 //account.
 main.addEventListener("click", function () {
-  if(matcharr.length==0){
-    alert('Please Sign In.')
-    div.innerHTML='SIGN IN!'
+  if (matcharr.length == 0) {
+    alert("Please Sign In.");
+    div.innerHTML = "SIGN IN!";
   }
-})
+});
 const SignInBody = document.getElementById("signBody");
 const Register = document.getElementById("register");
 const SignIn = document.getElementById("sign-in");
@@ -385,37 +385,31 @@ class Accounts {
 }
 const nuAccount = [];
 const AccountData = new Accounts(nuAccount);
-matcharr=[]
+matcharr = [];
 SignIn.addEventListener("click", function () {
   let U = document.getElementById("username").value;
   let P = document.getElementById("password").value;
   matcharr = nuAccount.filter((boo) => boo.Name === U && boo.Password === P);
-  if(matcharr.length>0){
-    SignInBody.innerHTML=`Hi ${nuAccount[0].Name}`
-    SignInBody.style.fontSize='30px'
-    div.innerHTML=''
-    shelf2.render()
+  if (matcharr.length > 0) {
+    SignInBody.innerHTML = `Hi ${nuAccount[0].Name}`;
+    SignInBody.style.fontSize = "30px";
+    div.innerHTML = "";
+    shelf2.render();
   }
-  if(matcharr.length==0){
-    alert('the username or password you have entered is invalid.')
+  if (matcharr.length == 0) {
+    alert("the username or password you have entered is invalid.");
   }
-})
+});
 
 Register.addEventListener("click", function () {
-    let x=document.getElementById("password1").value
-    let y=document.getElementById("password2").value
-    let z=document.getElementById("newusername").value
-  if(x==y
-  && y.length!==0
-  && z.length!==0
-  ){
-    let NewAcc = new Account(
-        (author = z),
-        (language = x),
-      );
-      AccountData.addAccount(NewAcc);
-      alert('Account successfully created')
-  }else{
-    alert('Passwords do not match or are empty')
+  let x = document.getElementById("password1").value;
+  let y = document.getElementById("password2").value;
+  let z = document.getElementById("newusername").value;
+  if (x == y && y.length !== 0 && z.length !== 0) {
+    let NewAcc = new Account((author = z), (language = x));
+    AccountData.addAccount(NewAcc);
+    alert("Account successfully created");
+  } else {
+    alert("Passwords do not match or are empty");
   }
-})
+});
