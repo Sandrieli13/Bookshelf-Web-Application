@@ -1,0 +1,180 @@
+/* This section applies to all html files */
+:root{
+    --blu:#3B6AD1;
+    --purp:#5C00A3;
+    --sky:#9adaf3;
+    --tomato:#F79359;
+    --fire:#E61919;
+  }
+body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    background-color: slategray;
+    overflow: auto;
+    font-family: 'Old Standard TT'
+}
+#navbar{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    height: 60px;
+    background: linear-gradient(var(--sky),var(--sky),var(--blu));
+    font-family: 'Nabla';
+    border-bottom: 14px solid saddlebrown;
+    top:0;
+    z-index:1
+}
+#navbar h1{
+    color: white;
+    padding-left: 15px;
+    font-weight: normal;
+}
+ul{
+    display:flex;
+    flex-direction: row;
+    list-style: none;
+    font-size: 20;
+}
+ul li{margin: auto;
+    padding: 20px;
+    writing-mode: unset;
+    text-orientation:initial;
+    background: none;
+    border:none;
+    background-color: transparent;
+}
+a{  font-size: 25px;
+    color:rgb(65, 64, 64);
+    text-decoration: none;
+}
+/* index.html section */
+main{
+    margin-top: 100px;
+}
+div{
+    position: relative;
+    margin-top: 0;
+    height: 350px;
+    background-color: antiquewhite;
+    border-bottom: 44px solid saddlebrown;  
+}
+/*Was wondering why overflow was not working in div or body and relized it were the
+list items that were overflowing, so had to use it in ordered lists*/
+ol{ 
+    position: relative;
+    display: flex;
+    list-style: none;
+    height: 80%;
+    top: 70px;
+    overflow:auto;
+    padding-right: 5%;
+}
+/*Changed the text orientation and styled it up a little bit*/
+li{
+    border: 1px solid rgb(65, 34, 28);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-align: center;
+    padding: 10px;
+    margin:0 0.05px; 
+    color:rgb(231, 155, 4);
+    background:url(https://garden.spoonflower.com/c/9664675/p/f/m/Xhe6_lDrAzDdRzm5UnMU97SMi-vovduXcZPDPLE2l0R7uci-kOCqlYzLN7A/Leather%20Pattern%20Textured%20Mottled%20Warm%20Brown%2024x36_01-150dpi.jpg);
+    font-style: italic;
+    border-radius: 3px;
+}
+li:hover{
+    position: inherit;
+    cursor: default;
+    bottom: 2px;
+}
+.fav{
+    margin-top: 229px;
+    width: 70px;
+    z-index: -1;
+}
+.fav:hover{
+    cursor: pointer;
+}
+.comment{
+    position:relative;
+    color: rgb(10, 10, 10);
+    display:grid;
+    grid-template-columns: 20fr;
+    transform: rotate(-90deg);
+    margin-top:200px;
+    width:50px;
+}
+.comment h5{
+    overflow-wrap: break-word;
+    height:200px;
+    background-color:azure;
+    margin:0.1px;
+    border:rgba(59, 8, 8, 0.847) solid;
+    border-radius:10px;
+    padding:10px;
+}
+textarea{
+    background-color: azure;
+    margin:0;
+    font-family: 'Old Standard TT';
+    margin-top: 99px;
+}
+/* contact.html section */
+#main-contact{
+    background: linear-gradient(var(--tomato),var(--sky),var(--tomato));
+    height:1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nabla';
+    font-size:2.5em
+}
+
+#main-contact p{
+    padding:100px;
+    border-radius:20px;
+    background: linear-gradient(var(--tomato),var(--sky),var(--tomato));
+    opacity:20%;
+}
+#main-contact p:hover{
+    cursor: pointer;
+    opacity:100%;
+    padding:300px;
+}
+/* about.html section */
+#main-about{
+    background: linear-gradient(var(--tomato),var(--sky),var(--tomato));
+    height:1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nabla';
+    font-size:2.5em;
+    margin-top:60px
+}
+
+#main-about p{
+    display: flex;
+    flex-wrap: wrap;
+    padding:100px;
+    border-radius:20px;
+    background: linear-gradient(var(--tomato),var(--sky),var(--tomato));
+    opacity:20%;
+}
+#main-about p:hover{
+    cursor: pointer;
+    opacity:100%;
+    padding:10rem;
+}
+
+/* Sign In section*/
+#signBody{
+background: linear-gradient(var(--tomato),var(--sky),var(--tomato));
+    font-family: 'Nabla';
+    margin-top:80px;
+    text-align: center;
+}

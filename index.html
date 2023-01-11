@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nabla&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap" rel="stylesheet">
+    <title>Bookshelf App</title>
+</head>
+<body>
+    <nav id="navbar">
+        <h1><a class="nav-link" href="index.html">Bookshelf App</a></h1>
+        <ul>
+            <li><a class="nav-link" href="contact.html">Contact</a></li>
+            <li><a class="nav-link" href="about.html">About</a></li>
+            <li><a class="nav-link" href="#signBody">Sign In</a></li>
+        </ul>
+    </nav>
+<main>
+    <h3>ADD NEW BOOK</h3>
+    <input id='a' type="text" placeholder="author">
+    <input id='l' type="text" placeholder="language">
+    <input id='s' type="text" placeholder="subject">
+    <input id='t' type="text" placeholder="title">
+    <button id="addIt">ADD</button>
+    <br>
+    <input id='search' type="text" placeholder="Search">
+    <button id="searchbut">Search</button>
+    <select name="selector" id="selector">
+        <option>Sort By</option>
+        <option value="A-Z" id="A-Z">A-Z title</option>
+        <option value="Z-A">Z-A title</option>
+        <option value="A-Z a">A-Z author</option>
+        <option value="Z-A a">Z-A author</option>
+        <option value="number of topics">number of topics</option>
+    </select>
+</main>
+<section id="signBody">
+    <input type="text" placeholder="Username" id="username"><br>
+    <input type="password" placeholder="Password" id="password"><br>
+    <button id="sign-in">Sign In</button><br>
+    <input type="text" placeholder="Username" id="newusername"><br>
+    <input type="password" placeholder="Password" id="password1"><br>
+    <input type="password" placeholder="Confirm Password" id="password2"><br>
+    <button id="register">Create Account</button>
+</section>
+    <script src="js/book-data.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
